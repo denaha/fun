@@ -83,19 +83,20 @@
             let low = 1;
             let high = 1000;
             let optimal = 1;
-
+        
             while (low <= high) {
                 let mid = Math.floor((low + high) / 2);
                 fullscreenText.style.fontSize = mid + 'px';
-
-                if (fullscreenText.offsetWidth <= displayWidth && fullscreenText.offsetHeight <= displayHeight) {
+        
+                const rect = fullscreenText.getBoundingClientRect();
+                if (rect.width <= displayWidth && rect.height <= displayHeight) {
                     optimal = mid;
                     low = mid + 1;
                 } else {
                     high = mid - 1;
                 }
             }
-
+        
             fullscreenText.style.fontSize = optimal + 'px';
         }
 
