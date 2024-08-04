@@ -53,8 +53,13 @@
         }
         @media (orientation: portrait) {
             .fullscreen-display {
+                writing-mode: horizontal-tb;
+            }
+        }
+
+        @media (orientation: landscape) {
+            .fullscreen-display {
                 writing-mode: vertical-rl;
-                text-orientation: mixed;
             }
         }
     </style>
